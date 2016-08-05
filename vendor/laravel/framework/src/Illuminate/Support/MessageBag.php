@@ -96,14 +96,39 @@ class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, Me
     }
 
     /**
-     * Determine if messages exist for a given key.
+     * Determine if messages exist for all of the given keys.
      *
-     * @param  string  $key
+     * @param  array|string  $key
      * @return bool
      */
     public function has($key = null)
     {
-        return $this->first($key) !== '';
+        $keys = is_array($key) ? $key : func_get_args();
+
+        foreach ($keys as $key) {
+            if ($this->first($key) === '') {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Determine if messages exist for any of the given keys.
+     *
+     * @param  array  $keys
+     * @return bool
+     */
+    public function hasAny($keys = [])
+    {
+        foreach ($keys as $key) {
+            if ($this->has($key)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -159,6 +184,17 @@ class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, Me
     }
 
     /**
+     * Get all of the unique messages for every key in the bag.
+     *
+     * @param  string  $format
+     * @return array
+     */
+    public function unique($format = null)
+    {
+        return array_unique($this->all($format));
+    }
+
+    /**
      * Format an array of messages.
      *
      * @param  array   $messages
@@ -198,9 +234,19 @@ class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, Me
      *
      * @return array
      */
-    public function getMessages()
+    public function messages()
     {
         return $this->messages;
+    }
+
+    /**
+     * Get the raw messages in the container.
+     *
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->messages();
     }
 
     /**
@@ -294,7 +340,7 @@ class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, Me
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->toArray(), $options);
+        return json_encode($this->jsonSerialize(), $options);
     }
 
     /**

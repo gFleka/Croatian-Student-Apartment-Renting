@@ -3,60 +3,55 @@
 namespace Illuminate\Foundation\Auth\Access;
 
 use Illuminate\Contracts\Auth\Access\Gate;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 
 trait AuthorizesRequests
 {
     /**
      * Authorize a given action against a set of arguments.
      *
-     * @param  string  $ability
+     * @param  mixed  $ability
      * @param  mixed|array  $arguments
-     * @return void
+     * @return \Illuminate\Auth\Access\Response
      *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function authorize($ability, $arguments = [])
     {
-        if (func_num_args() === 1) {
-            $arguments = $ability;
+        list($ability, $arguments) = $this->parseAbilityAndArguments($ability, $arguments);
 
-            $ability = debug_backtrace(false, 2)[1]['function'];
-        }
-
-        if (! app(Gate::class)->check($ability, $arguments)) {
-            throw $this->createGateUnauthorizedException($ability, $arguments);
-        }
+        return app(Gate::class)->authorize($ability, $arguments);
     }
 
     /**
      * Authorize a given action for a user.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable|mixed  $user
-     * @param  string  $ability
-     * @param  array  $arguments
-     * @return void
+     * @param  mixed  $ability
+     * @param  mixed|array  $arguments
+     * @return \Illuminate\Auth\Access\Response
      *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function authorizeForUser($user, $abiility, $arguments = [])
+    public function authorizeForUser($user, $ability, $arguments = [])
     {
-        $result = app(Gate::class)->forUser($user)->check($ability, $arguments);
+        list($ability, $arguments) = $this->parseAbilityAndArguments($ability, $arguments);
 
-        if (! $result) {
-            throw $this->createGateUnauthorizedException($ability, $arguments);
-        }
+        return app(Gate::class)->forUser($user)->authorize($ability, $arguments);
     }
 
     /**
-     * Throw an unauthorized exception based on gate results.
+     * Guesses the ability's name if it wasn't provided.
      *
-     * @param  string  $ability
-     * @param  array  $arguments
-     * @return void
+     * @param  mixed  $ability
+     * @param  mixed|array  $arguments
+     * @return array
      */
-    protected function createGateUnauthorizedException($ability, $arguments)
+    protected function parseAbilityAndArguments($ability, $arguments)
     {
-        return new HttpException(403, 'This action is unauthorized.');
+        if (is_string($ability)) {
+            return [$ability, $arguments];
+        }
+
+        return [debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3)[2]['function'], $ability];
     }
 }
