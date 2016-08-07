@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('/ID/{id}', function($id) {
+	echo 'id: ' .$id;
+});
+
+Route::resource('korisniks', 'KorisnikController');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
