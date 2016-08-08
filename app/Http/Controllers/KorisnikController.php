@@ -17,9 +17,8 @@ class KorisnikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      
+    public function index() {
+        return view('korisniks.index');
     }
 
     /**
@@ -27,9 +26,8 @@ class KorisnikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view('korisniks.create');
     }
 
     /**
@@ -51,8 +49,7 @@ class KorisnikController extends Controller
      */
     public function show($id)
     {
-       $korisnik = Korisnik::find($id);
-       return view('korisniks.show', array('korisnik' => $korisnik));
+       
     }
 
     /**

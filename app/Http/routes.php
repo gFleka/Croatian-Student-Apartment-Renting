@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/ID/{id}', function($id) {
-	echo 'id: ' .$id;
-});
 
 Route::resource('korisniks', 'KorisnikController');
+Route::resource('korisniks.oglas', 'OglasController');
+
 
 Route::get('/', function () {
     return view('welcome');

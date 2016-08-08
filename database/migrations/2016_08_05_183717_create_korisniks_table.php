@@ -31,6 +31,6 @@ class CreateKorisniksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('korisnik');
+        Schema::drop('korisniks');
     }
 }
