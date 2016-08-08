@@ -1,3 +1,4 @@
+<!-- /resources/views/korisniks/index.blade.php -->
 @extends('app')
 
 @section('content')
@@ -25,7 +26,7 @@
 	@else
 		<ul>
 			@foreach($korisniks as $korisnik)
-				<li><a href="{{ route('korisniks.show', $korisnik->slug) }}">{{ $korisnik->ime }} {{ $korisnik->prezime }}</a></li>
+				<li><a href="{{ route('korisniks.show', $korisnik->id) }}">{{ $korisnik->ime }}</a></li>
 			@endforeach
 		</ul>
 	@endif

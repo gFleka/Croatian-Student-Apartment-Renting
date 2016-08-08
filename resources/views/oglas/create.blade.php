@@ -1,9 +1,8 @@
-<!-- /resources/views/korisniks/show.blade.php -->
-
+<!-- /resources/views/oglas/create.blade.php -->
 @extends('app')
 
 @section('content')
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -20,19 +19,10 @@
 	<div class = "col-sm-8 col-sm-offset-2">
 
 		<div class = "page-header">
-			<h1>Dobrodosao</h1>
-			<h2>{{ $korisnik->ime }}</h2>
+			<h1>Oglas</h1>
 		</div>
-		@if(!$korisnik->oglas->count())
-			Prazno
-		@else
-			Puno
-			<ul>
-				@foreach($korisnik->oglas as $oglas)
-					<li><a href = "{{ route('korisniks.oglas.show') }}"> {{ $oglas->naslov }}</a></li>
-				@endforeach
-			</ul>
-		@endif
+
+		
 	</div>
 </div>
 

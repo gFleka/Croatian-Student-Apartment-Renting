@@ -13,14 +13,19 @@ class CreateOglasTable extends Migration
     public function up()
     {
         Schema::create('oglas', function (Blueprint $table) {
-            $table->bigIncrements('oglas_id');
-            $table->foreign('oglas_id')->references('id')->on('korisniks');
+
+            $table->engine = 'InnoDB';
+
+            $table->increments('id');
+            $table->integer('korisnik_id')->unsigned();  
             $table->string('naslov')->unique();
             $table->string('tekst');
             $table->string('regija');
             $table->integer('cijena_mjesec');
             $table->string('photo_url');
             $table->timestamps();
+            $table->foreign('korisnik_id')->references('id')->on('korisniks');
+            
         });
     }
 

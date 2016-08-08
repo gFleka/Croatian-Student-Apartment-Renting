@@ -14,6 +14,9 @@
 Route::model('korisniks', 'Korisnik');
 Route::model('oglas', 'Oglas');
 
+Route::bind('korisniks', function($value, $route) {
+	return App\Korisnik::whereId($value)->first();
+});
 
 Route::resource('korisniks', 'KorisnikController');
 Route::resource('korisniks.oglas', 'OglasController');

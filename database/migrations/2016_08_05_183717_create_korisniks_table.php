@@ -13,7 +13,10 @@ class CreateKorisniksTable extends Migration
     public function up()
     {
         Schema::create('korisniks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+
+            $table->engine = 'InnoDB';
+            
+            $table->increments('id');
             $table->string('ime');
             $table->string('prezime');
             $table->integer('mobitel')->unique();
