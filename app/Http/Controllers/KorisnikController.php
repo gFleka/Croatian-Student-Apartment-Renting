@@ -18,7 +18,8 @@ class KorisnikController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('korisniks.index');
+        $korisniks = Korisnik::all();
+        return view('korisniks.index', compact('korisniks'));
     }
 
     /**
@@ -36,8 +37,7 @@ class KorisnikController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         
     }
 
@@ -47,9 +47,8 @@ class KorisnikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-       
+    public function show(Korisnik $korisnik) {
+       return view('korisniks.show', compact('korisniks'));
     }
 
     /**
@@ -58,9 +57,8 @@ class KorisnikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Korisnik $korisnik) {
+        return view('korisniks.edit', compact('korisniks'));
     }
 
     /**
@@ -70,8 +68,7 @@ class KorisnikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Korisnik $korisnik) {
         //
     }
 
@@ -81,8 +78,7 @@ class KorisnikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy(Korisnik $korisnik) {
         //
     }
 }

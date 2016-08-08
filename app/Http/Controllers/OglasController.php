@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Korisnik;
+use App\Oglas;
+
+
 class OglasController extends Controller
 {
     /**
@@ -13,9 +17,8 @@ class OglasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      
+    public function index(Korisnik $korisnik) {
+    	return view('oglas.index', compact('korisnik'));
     }
 
     /**
@@ -23,9 +26,8 @@ class OglasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Korisnik $korisnik) {
+    	return view('oglas.create', compact('korisnik'));
     }
 
     /**
@@ -34,8 +36,7 @@ class OglasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Korisnik $korisnik) {
         
     }
 
@@ -45,9 +46,8 @@ class OglasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-       
+    public function show(Korisnik $korisnik, Oglas $oglas) {
+    	return view('oglas.edit', compact('korisnik', 'oglas'));
     }
 
     /**
@@ -56,8 +56,7 @@ class OglasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit(Korisnik $korisnik, Oglas $oglas) {
         //
     }
 
@@ -68,8 +67,7 @@ class OglasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Korisnik $korisnik, Oglas $oglas) {
         //
     }
 
@@ -79,8 +77,7 @@ class OglasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy(Korisnik $korisnik, Oglas $oglas) {
         //
     }
 }

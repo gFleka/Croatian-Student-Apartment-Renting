@@ -11,6 +11,9 @@
 |
 */
 
+Route::model('korisniks', 'Korisnik');
+Route::model('oglas', 'Oglas');
+
 
 Route::resource('korisniks', 'KorisnikController');
 Route::resource('korisniks.oglas', 'OglasController');

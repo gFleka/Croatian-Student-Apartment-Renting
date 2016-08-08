@@ -1,5 +1,7 @@
 <!-- /resources/views/korisniks/create.blade.php -->
+@extends('app')
 
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +14,7 @@
 
 <body class = "container">
 
+	
 <div class = "row">
 	<div class = "col-sm-8 col-sm-offset-2">
 
@@ -75,3 +78,4 @@
 </body>
 </html>
 
+@endsection
