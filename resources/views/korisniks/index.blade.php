@@ -26,7 +26,7 @@
 	@else
 		<ul>
 			@foreach($korisniks as $korisnik)
-				<li><a href="{{ route('korisniks.show', $korisnik->id) }}">{{ $korisnik->ime }}</a></li>
+				<li><a href="{{ route('korisniks.show', $korisnik->ime)}}">{{ $korisnik->ime }}</a></li>
 			@endforeach
 		</ul>
 	@endif

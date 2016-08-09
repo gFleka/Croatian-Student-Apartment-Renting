@@ -21,15 +21,15 @@
 
 		<div class = "page-header">
 			<h1>Dobrodosao</h1>
-			<h2>{{ $korisnik->ime }}</h2>
+			<h2>{{ $korisnik->ime }} {{ $korisnik->prezime }}</h2>
 		</div>
-		@if(!$korisnik->oglas->count())
+		@if(!$korisnik->oglasi->count())
 			Prazno
 		@else
 			Puno
 			<ul>
-				@foreach($korisnik->oglas as $oglas)
-					<li><a href = "{{ route('korisniks.oglas.show') }}"> {{ $oglas->naslov }}</a></li>
+				@foreach($korisnik->oglasi as $oglas)
+					<li><a href = "{{ route('korisniks.oglas.show', [$korisnik->ime, $oglas->id]) }}"> {{ $oglas->naslov }}</a></li>
 				@endforeach
 			</ul>
 		@endif

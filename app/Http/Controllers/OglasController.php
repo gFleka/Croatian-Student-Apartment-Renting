@@ -47,7 +47,7 @@ class OglasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Korisnik $korisnik, Oglas $oglas) {
-    	return view('oglas.edit', compact('korisnik', 'oglas'));
+    	return view('oglas.show', compact('korisnik', 'oglas'));
     }
 
     /**

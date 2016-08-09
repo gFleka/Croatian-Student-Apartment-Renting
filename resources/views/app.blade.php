@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Razvoj Internetskih Aplikacija</title>
+	<title>RIA</title>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,7 +28,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">RIA</a>
+				<a class="navbar-brand" href="#">Razvoj Internetskih Aplikacija</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbar">
@@ -38,11 +38,11 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if(auth()->guest())
-						@if(!Request::is('auth/login'))
-							<li><a href="{{ url('/auth/login') }}">Login</a></li>
+						@if(!Request::is('login'))
+							<li><a href="{{ url('login') }}">Login</a></li>
 						@endif
 						@if(!Request::is('auth/register'))
-							<li><a href="{{ url('/auth/register') }}">Register</a></li>
+							<li><a href="{{ url('/korisniks/create') }}">Register</a></li>
 						@endif
 					@else
 						<li class="dropdown">

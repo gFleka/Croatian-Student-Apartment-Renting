@@ -30,46 +30,45 @@
 		</div>
 		@endif
 	
-		<form method = "POST" action = "/korisnik/created" novalidate>
+		{{ Form::open(array('url' => 'korisniks')) }}
 
 			<div class = "form-group">
-				<label for = "name"> Ime </label>
-				<input type = "text" id = "name" class = "form-control" name = "name" placeholder = "Ime">
+				{{ Form::label('ime', 'Ime') }}
+				{{ Form::text('ime', Input::old('ime'), array('class' => 'form-control')) }}
 			</div>
 
 			<div class = "form-group">
-				<label for = "surname"> Prezime </label>
-				<input type = "text" id = "surname" class = "form-control" name = "surname" placeholder = "Prezime">
+				{{ Form::label('prezime', 'Prezime') }}
+				{{ Form::text('prezime', Input::old('prezime'), array('class' => 'form-control')) }}
 			</div>
 
 			<div class = "form-group">
-				<label for = "mobile"> Broj telefona </label>
-				<input type = "text" id = "usermobile" class = "form-control" name = "usermobile" placeholder = "Broj Telefona">
+				{{ Form::label('mobitel', 'Broj Mobitela') }}
+				{{ Form::text('mobitel', Input::old('mobitel'), array('class' => 'form-control')) }}
 			</div>
 			
 			<div class = "form-group">
-				<label for = "dateofbirth"> Datum rodenja </label>
-				<input type = "date" id = "dateofbirth" class = "form-control" name = "dateofbirth" placeholder = "DD/MM/YYYY">
+				{{ Form::label('datum_rodenja', 'Datum Rodenja') }}
+				{{ Form::date('datum_rodenja', Input::old('datum_rodenja'), array('class' => 'form-control')) }}
 			</div>
 
 			<div class = "form-group">
-				<label for = "email"> Email </label>
-				<input type = "email" id = "email" class = "form-control" name = "email" placeholder = "example@ria.com">
+				{{ Form::label('email', 'Email') }}
+				{{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
 			</div>
 
 			<div class = "form-group">
-				<label for = "password"> Password </label>
-				<input type = "password" id = "password" class = "form-control" name = "password" placeholder = "Password">
+				{{ Form::label('password', 'Password') }}
+				{{ Form::password('password', Input::old('password'), array('class' => 'form-control')) }}
 			</div>
 
 			<div class = "form-group">
-				<label for = "passwordconfirm"> Password Confirm </label>
-				<input type = "password" id = "passwordconfirm" class = "form-control" name = "passwordconfirm" placeholder = "Confirm Password">
+				{{ Form::label('password_confirmation', 'Confirm Password') }}
+				{{ Form::password('password_confirmation', Input::old('password_confirmation'), array('class' => 'form-control')) }}
 			</div>
 
-			<button type = "submit" class = "btn btn-success"> Submit! </button>
-
-		</form>
+			{{ Form::submit('Submit!', array('class' => 'btn btn-primary')) }}
+		{{ Form::close() }}
 
 
 	</div>

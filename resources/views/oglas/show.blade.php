@@ -20,10 +20,11 @@
 	<div class = "col-sm-8 col-sm-offset-2">
 
 		<div class = "page-header">
-			<h2> {!! link_to_route('korisniks.show', $korisnik->ime) !!} - {{ $oglas->naslov }} </h2>
+			<h2> {!! link_to_route('korisniks.show', $korisnik->ime, [$korisnik->ime]) !!} -
+				{{ $oglas->naslov }} </h2>
 		</div>
 		{{ $oglas->tekst }}
-	</div>
+	</div>s
 </div>
 
 </body>

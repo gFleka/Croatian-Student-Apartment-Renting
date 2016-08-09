@@ -15,11 +15,18 @@ Route::model('korisniks', 'Korisnik');
 Route::model('oglas', 'Oglas');
 
 Route::bind('korisniks', function($value, $route) {
-	return App\Korisnik::whereId($value)->first();
+	return App\Korisnik::whereIme($value)->first();
+});
+
+Route::bind('oglas', function($value, $route) {
+	return App\Oglas::whereId($value)->first();
 });
 
 Route::resource('korisniks', 'KorisnikController');
 Route::resource('korisniks.oglas', 'OglasController');
+
+/* Login */
+Route::get('login', array('uses' => 'KorisnikController@showLogin'));
 
 
 Route::get('/', function () {
