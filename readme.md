@@ -1,27 +1,32 @@
-# Laravel PHP Framework
+## Croatia Student Apartment Renting
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+CSAR is an open-source student project with simple but yet powerful initiative to ease student life by creating web-application for apartment renting. Application is meant to connect students with
+its respective potential lessors. What makes this web-application different from the competition is an agency blocker. By this blocking, students are in direct communication with the lessors, avoiding the agencies and additional fees. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+CSAR will be free of charge!
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## TODO list
+- [x] Create User Registration
+- [x] Create User Login
+- [ ] Custom User Home Page
+- [ ] Admin page
+- [ ] Ad creation
+- [ ] Ad search
+...
+
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the CSAR(Coming).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Contributions are always welcome! Please check our contribution guide(Coming).
 
-## Security Vulnerabilities
+## Contributors
+[Nino Križanec](https://hr.linkedin.com/in/nino-križanec-86126990)
+[Ivan Jureša](https://hr.linkedin.com/in/ivan-jureša-37258770)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### License
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The CSAR is based on Laravel Framework and is open-source project.
