@@ -10,10 +10,10 @@ CSAR will be free of charge!
 - [x] Create User Login
 - [ ] Custom User Home Page
 - [ ] Admin page
-- [ ] Ad creation form
-- [ ] Ad search
-- [ ] Navigation Bar
-- [ ] Limit views depending on user or !user
+- [ ] Accomodation creation form
+- [ ] Accomodation search
+- [x] Navigation Bar
+- [x] Limit views depending on user or !user
 
 
 ## Official Documentation
