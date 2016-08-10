@@ -18,10 +18,12 @@ class Oglas extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();  
             $table->string('naslov')->unique();
-            $table->string('tekst');
+            $table->longText('opis');
             $table->string('regija');
             $table->integer('cijena_mjesec');
             $table->string('photo_url');
+            $table->string('smjestaj');
+            $table->boolean('soba');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             

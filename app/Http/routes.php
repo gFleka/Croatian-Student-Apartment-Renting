@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::auth();
+
+
+Route::resource('oglas', 'OglasController');
+
+
+//Route::resource('users', 'UserController');		//<! Empty for now
 
 Route::get('/home', 'HomeController@index');

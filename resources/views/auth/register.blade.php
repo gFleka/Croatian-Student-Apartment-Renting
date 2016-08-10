@@ -12,7 +12,7 @@
 
                         <!-- IME -->
                         <div class="form-group{{ $errors->has('ime') ? ' has-error' : '' }}">
-                            <label for="ime" class="col-md-4 control-label">Ime</label>
+                            <label for="ime" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
                                 <input id="ime" type="text" class="form-control" name="ime" value="{{ old('ime') }}">
@@ -28,7 +28,7 @@
 
                         <!-- PREZIME -->
                         <div class="form-group{{ $errors->has('prezime') ? ' has-error' : '' }}">
-                            <label for="prezime" class="col-md-4 control-label">Prezime</label>
+                            <label for="prezime" class="col-md-4 control-label">Surname</label>
 
                             <div class="col-md-6">
                                 <input id="prezime" type="text" class="form-control" name="prezime" value="{{ old('prezime') }}">
@@ -44,7 +44,7 @@
 
                         <!-- MOBITEL -->
                         <div class="form-group{{ $errors->has('mobitel') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Broj Mobitela</label>
+                            <label for="mobitel" class="col-md-4 control-label">Phone Number</label>
 
                             <div class="col-md-6">
                                 <input id="mobitel" type="text" class="form-control" name="mobitel" value="{{ old('mobitel') }}">
@@ -60,7 +60,7 @@
 
                          <!-- DATUM RODENJA -->
                         <div class="form-group{{ $errors->has('datum_rodenja') ? ' has-error' : '' }}">
-                            <label for="datum_rodenja" class="col-md-4 control-label">Datum Rodenja</label>
+                            <label for="datum_rodenja" class="col-md-4 control-label">Date of Birth</label>
 
                             <div class="col-md-6">
                                 <input id="datum_rodenja" type="date" class="form-control" name="datum_rodenja" value="{{ old('datum_rodenja') }}">
@@ -75,7 +75,7 @@
 
                          <!-- EMAIL -->
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Adresa</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">

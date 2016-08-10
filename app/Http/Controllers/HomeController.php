@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
+     * Protected Route, ONLY for auth users
      * @return void
      */
     public function __construct()
