@@ -2801,30 +2801,31 @@
     },
     {
         "name": "webmozart/assert",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/webmozart/assert.git",
-            "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde"
+            "reference": "bb2d123231c095735130cc8f6d31385a44c7b308"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/webmozart/assert/zipball/30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
-            "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+            "url": "https://api.github.com/repos/webmozart/assert/zipball/bb2d123231c095735130cc8f6d31385a44c7b308",
+            "reference": "bb2d123231c095735130cc8f6d31385a44c7b308",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": "^5.3.3|^7.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "^4.6"
+            "phpunit/phpunit": "^4.6",
+            "sebastian/version": "^1.0.1"
         },
-        "time": "2015-08-24 13:29:44",
+        "time": "2016-08-09 15:02:57",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0-dev"
+                "dev-master": "1.2-dev"
             }
         },
         "installation-source": "dist",
@@ -3254,6 +3255,50 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "bestmomo/scafold",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bestmomo/scafold.git",
+            "reference": "358554ef73a56ab20c0af1c0b6d4218829474820"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bestmomo/scafold/zipball/358554ef73a56ab20c0af1c0b6d4218829474820",
+            "reference": "358554ef73a56ab20c0af1c0b6d4218829474820",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.1",
+            "php": ">=5.4.0"
+        },
+        "time": "2016-05-26 11:04:10",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Bestmomo\\Scafold\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Bestmomo",
+                "email": "grandheretique@free.fr"
+            }
+        ],
+        "description": "To add scafold to Laravel 5.1",
+        "homepage": "http://github.com/bestmomo/scafold"
+    },
+    {
         "name": "laravelcollective/html",
         "version": "v5.2.4",
         "version_normalized": "5.2.4.0",
@@ -3308,49 +3353,5 @@
         ],
         "description": "HTML and Form Builders for the Laravel Framework",
         "homepage": "http://laravelcollective.com"
-    },
-    {
-        "name": "bestmomo/scafold",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/bestmomo/scafold.git",
-            "reference": "358554ef73a56ab20c0af1c0b6d4218829474820"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/bestmomo/scafold/zipball/358554ef73a56ab20c0af1c0b6d4218829474820",
-            "reference": "358554ef73a56ab20c0af1c0b6d4218829474820",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "~5.1",
-            "php": ">=5.4.0"
-        },
-        "time": "2016-05-26 11:04:10",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Bestmomo\\Scafold\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            },
-            {
-                "name": "Bestmomo",
-                "email": "grandheretique@free.fr"
-            }
-        ],
-        "description": "To add scafold to Laravel 5.1",
-        "homepage": "http://github.com/bestmomo/scafold"
     }
 ]

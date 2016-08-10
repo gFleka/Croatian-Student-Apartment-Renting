@@ -29,14 +29,14 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected $redirectAfterLogout = '/login';
 
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
@@ -46,11 +46,13 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data) {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'ime' => 'required|max:255',
+            'prezime' => 'required|max:255',
+            'mobitel' => 'required|numeric|digits_between:3,10|Unique:users',
+            'datum_rodenja' => 'required|date|before:"now',
+            'email' => 'required|email|max:255|Unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -61,10 +63,16 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
-    {
+    protected function create(array $data) {
+
+        $datumNew = $data['datum_rodenja'];
+        $datumNew = date('Y-m-d', strtotime($datumNew));
+
         return User::create([
-            'name' => $data['name'],
+            'ime' => $data['ime'],
+            'prezime' => $data['prezime'],
+            'mobitel' => $data['mobitel'],
+            'datum_rodenja' => $datumNew,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
