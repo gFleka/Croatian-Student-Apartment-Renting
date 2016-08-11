@@ -51,11 +51,12 @@
                         <ul class="nav navbar-nav">
                             <li><a href="{{ url('/home') }}">Home</a></li>
                         
-                        
-                            <li><a href = "{{ url('/oglas') }}">Rent</a></li>
-                        @if (Auth::user())
+                         @if(Auth::guest())
+                            <li><a href = "{{ url('/oglasview') }}">Rent</a></li>
+                         @else
+                            <li><a href = "{{ url('/oglasview') }}">Rent</a></li>
                             <li><a href = "{{ url('oglas/create') }}">Create</a></li>
-                        @else
+                      
 
                         @endif
 

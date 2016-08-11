@@ -13,17 +13,10 @@ use Validator;
 
 class OglasController extends Controller {
 
-	public function __construct()
-    {
+	public function __construct() {
         $this->middleware('auth');
     }
 
-	/* Lists all of the Ads */	
-	public function index() {
-		$oglas = Oglas::all();
-		$users = User::all();
-		return view('oglas.index', compact('users', 'oglas'));
-	}
 
 	public function create() {
 		return view('oglas.create');
@@ -68,7 +61,7 @@ class OglasController extends Controller {
 	public function show($id) {
 		$users = User::All();
 		$oglas = Oglas::All();
-		return view('oglas/show', compact('users', 'id'));
+		return view('oglas/show', compact('oglas', 'users', 'id'));
 		
 	}
 

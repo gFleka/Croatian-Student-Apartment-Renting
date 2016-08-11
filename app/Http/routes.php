@@ -20,6 +20,9 @@ Route::auth();
 
 
 Route::resource('oglas', 'OglasController');
+Route::resource('oglasview', 'OglasViewController');
+
+
 
 
 //Route::resource('users', 'UserController');		//<! Empty for now
