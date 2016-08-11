@@ -8,11 +8,13 @@ CSAR will be free of charge!
 ## TODO list
 - [x] Create User Registration
 - [x] Create User Login
-- [ ] Custom User Home Page
+- [x] Custom User Home Page
 - [ ] Admin page
-- [ ] Ad creation
-- [ ] Ad search
-...
+- [x] Ad creation
+- [x] Ad search
+- [ ] Restrict views
+- [ ] Search Bar
+- [ ] Show User->Ad
 
 
 ## Official Documentation
