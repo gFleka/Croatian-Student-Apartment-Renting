@@ -52,8 +52,8 @@
                             <li><a href="{{ url('/home') }}">Home</a></li>
                         
                         @if (Auth::user())
-                            <li><a href = "{{ url('/listOglasAppartment') }}">Rent an Appartment</a></li>
-                            <li><a href = "{{ url('oglas/create') }}">Create an AD</a></li>
+                            <li><a href = "{{ url('/oglas') }}">Rent</a></li>
+                            <li><a href = "{{ url('oglas/create') }}">Create</a></li>
                         @else
 
                         @endif

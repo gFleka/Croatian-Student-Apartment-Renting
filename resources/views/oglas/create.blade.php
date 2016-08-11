@@ -7,16 +7,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">New Accomodation Form</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
 
+                    <!-- OPEN FORM -->
+                    {{ Form::open(array('url' => 'oglas')) }}
+                        
                         <!-- NASLOV -->
                         <div class="form-group{{ $errors->has('naslov') ? ' has-error' : '' }}">
-                            <label for="naslov" class="col-md-4 control-label">Title</label>
+                            {{Form::label('naslov', 'Title', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <input id="naslov" type="text" class="form-control" name="naslov" value="{{ old('naslov') }}">
-
+                                {{ Form::text('naslov', Input::old('naslov'), array('class' => 'form-control')) }}
+                               
                                 @if ($errors->has('naslov'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('naslov') }}</strong>
@@ -28,11 +29,10 @@
 
                         <!-- OPIS -->
                         <div class="form-group{{ $errors->has('opis') ? ' has-error' : '' }}">
-                            <label for="opis" class="col-md-4 control-label">Description</label>
+                            {{ Form::label('opis', 'Description', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <textarea class = "form-control" rows = "3" value = value="{{ old('opis') }}"></textarea>
-                              
+                                {{ Form::textarea('opis', Input::old('opis'), array('class' => 'form-control')) }}
 
                                 @if ($errors->has('opis'))
                                     <span class="help-block">
@@ -45,10 +45,10 @@
 
                          <!-- CIJENA MJESEC -->
                         <div class="form-group{{ $errors->has('cijena_mjesec') ? ' has-error' : '' }}">
-                            <label for="cijena_mjesec" class="col-md-4 control-label">Price</label>
+                            {{ Form::label('cijena_mjesec', 'Price', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <input id="cijena_mjesec" type="int" class="form-control" name="cijena_mjesec" value="{{ old('cijena_mjesec') }}">
+                                {{ Form::text('cijena_mjesec', Input::old('cijena_mjesec'), array('class' => 'form-control')) }}
 
                                 @if ($errors->has('cijena_mjesec'))
                                     <span class="help-block">
@@ -60,10 +60,10 @@
 
                          <!-- SLIKA -->
                         <div class="form-group{{ $errors->has('photo_url') ? ' has-error' : '' }}">
-                            <label for="photo_url" class="col-md-4 control-label">Photo URL</label>
+                            {{ Form::label('photo_url', 'Photo URL', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <input id="photo_url" type="text" class="form-control" name="photo_url" value="{{ old('photo_url') }}">
+                                {{ Form::text('photo_url', Input::old('photo_url'), array('class' => 'form-control')) }}
 
                                 @if ($errors->has('photo_url'))
                                     <span class="help-block">
@@ -76,21 +76,23 @@
 
                         <!-- REGIJA -->
                         <div class="form-group{{ $errors->has('regija') ? ' has-error' : '' }}">
-                            <label for="regija" class="col-md-4 control-label">Region</label>
+                            {{ Form::label('regija', 'Region', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                             <select class = "form-control" value = "{{ old('regija') }}">
-                                <option> Pula </option>
-                                <option> Rijeka </option>
-                                <option> Šibenik </option>
-                                <option> Zadar </option>
-                                <option> Split </option>
-                                <option> Dubrovnik </option>
-                                <option> Karlovac </option>
-                                <option> Zagreb </option>
-                                <option> Varaždin </option>
-                                <option> Osijek </option>
-                            </select>
+                            {{ Form::select('regija', [
+                                'pula'              => 'Pula',
+                                'rijeka'            => 'Rijeka',
+                                'sibenik'           => 'Šibenik',
+                                'zadar'             => 'Zadar',
+                                'split'             => 'Split',
+                                'dubrovnik'         => 'Dubrovnik',
+                                'karlovac'          => 'Karlovac',
+                                'zagreb'            => 'Zagreb',
+                                'varazdin'          => 'Varaždin',
+                                'osijek'            => 'Osijek',
+                                'slavonski_brod'    => 'Slavonski Brod',
+                                'vukovar'           => 'Vukovar']
+                            ) }}
 
                                 @if ($errors->has('regija'))
                                     <span class="help-block">
@@ -102,35 +104,27 @@
 
                         <!-- SMJESTAJ -->
                         <div class="form-group{{ $errors->has('smjestaj') ? ' has-error' : '' }}">
-                            <label for="smjestaj" class="col-md-4 control-label">Accommodation</label>
+                            {{ Form::label('smjestaj', 'Accomodation', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <label class = "radio-inline">
-                                    <input type = "radio" id="smjestaj" class="form-control" name="smjestaj" value="{{ old('smjestaj') }}"> House
-                                </label>
-                                <label class = "radio-inline">
-                                    <input type = "radio" id="smjestaj" class="form-control" name="smjestaj" value="{{ old('smjestaj') }}"> Appartment
-                                </label>
+                                {{ Form::radio('smjestaj', 'Apartment') }}Apartment<br>
+                                {{ Form::radio('smjestaj', 'House') }} House
 
-                                    @if ($errors->has('smjestaj'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('smjestaj') }}</strong>
-                                    </span>
-                                    @endif
+                                @if ($errors->has('smjestaj'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('smjestaj') }}</strong>
+                                </span>
+                                @endif
                             </div>
                         </div>
 
                         <!-- SOBA -->
                         <div class="form-group{{ $errors->has('soba') ? ' has-error' : '' }}">
-                            <label for="soba" class="col-md-4 control-label">Only Room?</label>
+                             {{ Form::label('soba', 'Only Room?', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
-                                <label class = "radio-inline">
-                                    <input type = "radio" id="soba" class="form-control" name="soba" value="{{ old('soba') }}"> Yes
-                                </label>
-                                <label class = "radio-inline">
-                                    <input type = "radio" id="soba" class="form-control" name="soba" value="{{ old('soba') }}"> No
-                                </label>
+                                {{ Form::radio('soba', 'Yes') }}Yes<br>
+                                {{ Form::radio('soba', 'No') }} No
 
                                 @if ($errors->has('soba'))
                                     <span class="help-block">
@@ -140,14 +134,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i> Create
-                                </button>
-                            </div>
+                        <!-- BUTTON -->
+                        <div class="col-md-6 col-md-offset-4">
+                            {{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
                         </div>
-                    </form>
+                        
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
