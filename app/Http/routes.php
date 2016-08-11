@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 
-
 Route::auth();
 
 
