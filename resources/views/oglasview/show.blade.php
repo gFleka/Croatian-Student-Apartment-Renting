@@ -3,7 +3,9 @@
 @section('content')
 
 	<ul>
+		{{-- */$currentUser = Auth::user()->id;/* --}}
 		@foreach($oglas as $oglasN)
+			@if($currentUser == $oglasN->user_id)
 			<div class="container">
     			<div class="row">
        				<div class="col-md-8 col-md-offset-2">
@@ -25,6 +27,7 @@
     				</div>
      			</div>
 			</div>
+		@endif
 		@endforeach	
 	</ul>
 

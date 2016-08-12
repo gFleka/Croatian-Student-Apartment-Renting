@@ -39,8 +39,6 @@ class OglasController extends Controller {
 		} else {
 			$oglas = new Oglas;
 
-
-
 			$oglas->user_id			= $request->user()->id;
 			$oglas->naslov 			= Input::get('naslov');
 			$oglas->opis 			= Input::get('opis');
@@ -55,14 +53,12 @@ class OglasController extends Controller {
 			return \Redirect::to('oglas');
 
 		}
-
 	}
 
 	public function show($id) {
 		$users = User::All();
 		$oglas = Oglas::All();
 		return view('oglas/show', compact('oglas', 'users', 'id'));
-		
 	}
 
 

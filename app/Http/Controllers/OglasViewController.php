@@ -11,11 +11,18 @@ use App\Oglas;
 
 class OglasViewController extends Controller {
 
-	
    /* Lists all of the Ads */	
 	public function index() {
 		$oglas = Oglas::all();
 		$users = User::all();
-		return view('oglas.index', compact('users', 'oglas'));
+		return view('oglasview.index', compact('users', 'oglas'));
+	}
+
+	public function show() {
+		$users = User::All();
+		$oglas = Oglas::All();
+		return view('oglasview/show', compact('users', 'oglas'));
+
+
 	}
 }
