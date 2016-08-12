@@ -57,11 +57,16 @@
                          @else
                             <li><a href = "{{ url('/oglasview') }}">Rent</a></li>
                             <li><a href = "{{ url('oglas/create') }}">Create</a></li>
-                      
 
                         @endif
 
+                        
                         </ul>
+                        {!! Form::open(array('route' => 'queries.store', 'class'=>'form navbar-form navbar-right searchform')) !!}
+                            {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=>'Search')) !!}
+                            {!! Form::submit('Search', array('class'=>'btn btn-default')) !!}
+                        {!! Form::close() !!}
+
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
                             <!-- Authentication Links -->

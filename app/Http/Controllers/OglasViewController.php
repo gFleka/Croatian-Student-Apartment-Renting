@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\User;
 use App\Oglas;
+use Auth;
 
 class OglasViewController extends Controller {
 
@@ -21,8 +22,18 @@ class OglasViewController extends Controller {
 	public function show() {
 		$users = User::All();
 		$oglas = Oglas::All();
-		return view('oglasview/show', compact('users', 'oglas'));
-
-
+		if(Auth::guest()) {
+			return view('auth/login');
+		} else {
+			return view('oglasview/show', compact('users', 'oglas'));
+		}
 	}
+
+	public function destroy($id) {
+		Oglas::where('id', $id)->delete();
+
+		return redirect('oglasview/show');
+	}
+
+
 }

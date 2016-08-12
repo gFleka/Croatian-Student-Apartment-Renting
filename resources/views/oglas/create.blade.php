@@ -45,7 +45,7 @@
 
                          <!-- CIJENA MJESEC -->
                         <div class="form-group{{ $errors->has('cijena_mjesec') ? ' has-error' : '' }}">
-                            {{ Form::label('cijena_mjesec', 'Price', array('class' => 'col-md-4 control-label')) }}
+                            {{ Form::label('cijena_mjesec', 'Price €/month', array('class' => 'col-md-4 control-label')) }}
 
                             <div class="col-md-6">
                                 {{ Form::text('cijena_mjesec', Input::old('cijena_mjesec'), array('class' => 'form-control')) }}
@@ -80,18 +80,18 @@
 
                             <div class="col-md-6">
                             {{ Form::select('regija', [
-                                'pula'              => 'Pula',
-                                'rijeka'            => 'Rijeka',
-                                'sibenik'           => 'Šibenik',
-                                'zadar'             => 'Zadar',
-                                'split'             => 'Split',
-                                'dubrovnik'         => 'Dubrovnik',
-                                'karlovac'          => 'Karlovac',
-                                'zagreb'            => 'Zagreb',
-                                'varazdin'          => 'Varaždin',
-                                'osijek'            => 'Osijek',
-                                'slavonski_brod'    => 'Slavonski Brod',
-                                'vukovar'           => 'Vukovar']
+                                'Pula'              => 'Pula',
+                                'Rijeka'            => 'Rijeka',
+                                'Šibenik'           => 'Šibenik',
+                                'Zadar'             => 'Zadar',
+                                'Split'             => 'Split',
+                                'Dubrovnik'         => 'Dubrovnik',
+                                'Karlovac'          => 'Karlovac',
+                                'Zagreb'            => 'Zagreb',
+                                'Varazdin'          => 'Varaždin',
+                                'Osijek'            => 'Osijek',
+                                'Slavonski_brod'    => 'Slavonski Brod',
+                                'Vukovar'           => 'Vukovar']
                             ) }}
 
                                 @if ($errors->has('regija'))

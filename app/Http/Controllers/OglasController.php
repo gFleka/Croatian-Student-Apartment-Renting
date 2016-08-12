@@ -50,7 +50,7 @@ class OglasController extends Controller {
 
 			$oglas->save();
 
-			return \Redirect::to('oglas');
+			return \Redirect::to('oglasview/show');
 
 		}
 	}

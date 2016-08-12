@@ -21,10 +21,9 @@ Route::auth();
 
 Route::resource('oglas', 'OglasController');
 Route::resource('oglasview', 'OglasViewController');
-
-
+Route::resource('queries', 'QueriesController');
 
 
 //Route::resource('users', 'UserController');		//<! Empty for now
 
-Route::get('/home', 'HomeController@index');
+

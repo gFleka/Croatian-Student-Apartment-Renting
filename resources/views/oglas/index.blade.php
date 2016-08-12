@@ -10,7 +10,7 @@
             			<div class="panel panel-default">
                 			<div class="panel-heading"><a href = "{{ route('oglas.show', [$oglasN->id]) }}"> {{ $oglasN->naslov }}</a></div>
                 				<div class="panel-body">
-									<li>Description: {{ $oglasN->opis }}</li>
+									<textarea disabled="" class="form-control" style="min-width: 100%"> Description: {{ $oglasN->opis }} </textarea>
 									<li>Region: {{ $oglasN->regija }}</li>
 									<li>Price: {{ $oglasN->cijena_mjesec }}</li>
 									<li>Accomodation Type: {{ $oglasN->smjestaj }}</li>
