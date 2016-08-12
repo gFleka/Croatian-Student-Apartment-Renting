@@ -84,7 +84,7 @@ foreach($urls as $url)
     //Slanje na api te ispis
     
     include_once('sendPost.php');
-    $url = 'http://myideamaker.com/laravel/api';
+    
 	//var_dump($emails_all);
 	// Ispis svih emailova
 	echo "<hr>";
@@ -92,7 +92,7 @@ foreach($urls as $url)
 	for($i=0;$i<count($emails_all);$i++)
 	{
         $data = array('email' => $emails_all[$i]);
-        httpPost($url, $data);
+        httpPost($url_api, $data);
 		echo $emails_all[$i] . "<br>";
 }
     //Slanje na api te ispis
@@ -102,7 +102,7 @@ foreach($urls as $url)
 	for($i=0;$i<count($phones_all);$i++)
 	{
 		$data = array('telefon' => $phones_all[$i]);
-        httpPost($url, $data);
+        httpPost($url_api, $data);
         echo $phones_all[$i] . "<br>";
 	}
 
