@@ -17,6 +17,8 @@ CSAR will be free of charge!
 - [ ] E-Mail Confirmation
 - [ ] Password Reset
 - [ ] Custom Accomodation Search
+- [ ] Edit Advertisement
+- [ ] Delete Advertisement
 
 
 ## Official Documentation
