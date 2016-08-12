@@ -16,9 +16,9 @@ CSAR will be free of charge!
 - [x] Limit views depending on user or !user
 - [ ] E-Mail Confirmation
 - [ ] Password Reset
-- [ ] Custom Accomodation Search
+- [x] Custom Accomodation Search
 - [ ] Edit Advertisement
-- [ ] Delete Advertisement
+- [x] Delete Advertisement
 
 
 ## Official Documentation
