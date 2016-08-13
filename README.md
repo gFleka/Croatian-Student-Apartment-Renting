@@ -3,7 +3,7 @@
 CSAR is an open-source student project with simple but yet powerful initiative to ease student life by creating web-application for apartment renting. Application is meant to connect students with
 its respective potential lessors. What makes this web-application different from the competition is an agency blocker. By this blocking, students are in direct communication with the lessors, avoiding the agencies and additional fees. 
 
-CSAR will be free of charge!
+CSAR will be free of charge! (http://csar.scaluza.com/)
 
 ## TODO list
 - [x] Create User Registration
