@@ -95,6 +95,13 @@ foreach($urls as $url)
         httpPost($url_api, $data);
 		echo $emails_all[$i] . "<br>";
 }
+	//uklanjanje nepotrebnih charactera za upis u bazu
+	for($i=0;$i<count($phones_all);$i++)
+	{
+		$phones_all[$i]=str_replace("+385","",$phones_all[$i]);
+		$phones_all[$i]=str_replace("385","",$phones_all[$i]);
+		$phones_all[$i]=str_replace("(0)","",$phones_all[$i]);
+	}
     //Slanje na api te ispis
 	// Ispis svih telefonskih brojeva
 	echo "<hr>";
