@@ -5,6 +5,8 @@ its respective potential lessors. What makes this web-application different from
 
 CSAR will be free of charge! (http://csar.scaluza.com/)
 
+CSAR is divided in two parts, the first one is the master branch and it is the web application, while you can find the second part in the crawler folder (has it's own readme).
+
 ## TODO list
 - [x] Create User Registration
 - [x] Create User Login
