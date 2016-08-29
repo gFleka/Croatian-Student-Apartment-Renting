@@ -71,7 +71,7 @@ class AuthController extends Controller
         $mobitel = $data['mobitel'];
         $email = $data['email'];
         
-        if((file_get_contents("http://scaluza.com/laravel/api/usporedi?telefon=" . $mobitel" .&email=" . $email)) != '0') {
+        if((file_get_contents("http://scaluza.com/laravel/api/usporedi?telefon=" . $mobitel . "&email=" . $email)) != '0') {
             return redirect('register');
         }
         else {
