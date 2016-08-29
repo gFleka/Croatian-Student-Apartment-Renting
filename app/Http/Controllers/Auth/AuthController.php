@@ -67,14 +67,22 @@ class AuthController extends Controller
 
         $datumNew = $data['datum_rodenja'];
         $datumNew = date('Y-m-d', strtotime($datumNew));
-
-        return User::create([
-            'ime' => $data['ime'],
-            'prezime' => $data['prezime'],
-            'mobitel' => $data['mobitel'],
-            'datum_rodenja' => $datumNew,
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        
+        $mobitel = $data['mobitel'];
+        $email = $data['email'];
+        
+        if((file_get_contents("http://scaluza.com/laravel/api/usporedi?telefon=" . $mobitel" .&email=" . $email)) != '0') {
+            return redirect('register');
+        }
+        else {
+            return User::create([
+                'ime' => $data['ime'],
+                'prezime' => $data['prezime'],
+                'mobitel' => $data['mobitel'],
+                'datum_rodenja' => $datumNew,
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }
     }
 }
